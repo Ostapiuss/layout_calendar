@@ -1,0 +1,40 @@
+.calendar {
+  display: flex;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 728px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+
+  div {
+    @include sizing(102px);
+    
+    &:first-child {
+      animation: MoveLeft 1.2s ease-in;
+      animation-fill-mode: forwards;
+    }
+
+    &:hover {
+      animation: MoveUp 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @for $i from 1 through 31 {
+      &:nth-child(#{$i}) {
+        @extend %placeholer-for-calendar;
+      }
+    }
+
+    @for $i from 1 through 31 {
+      &:nth-child(#{$i})::after {
+        content: "#{$i}";
+      }
+    }
+  }
+  @each $name, $index in $weeklist {
+    &-#{$name}>div:first-child {
+      margin-left: $index *104px;
+    }
+  }
+}

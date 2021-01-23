@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $calendar-text-size;
+  font-size: $calendar-text-size;
+  font-weight: 400;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}

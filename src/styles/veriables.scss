@@ -1,0 +1,25 @@
+$calendar-text-size: 30px;
+$calendar-text-style: "Arial", serif;
+
+$weeklist:
+  "mon"1,
+  "tue"2,
+  "wens"3,
+  "thu"4,
+  "fri"5,
+  "satu"6,
+  "sund"7;
+
+%placeholer-for-calendar {
+  line-height: 102px;
+  margin: 1px;
+  border: 1px solid;
+}
+
+@mixin sizing($size) {
+  height: $size;
+  width: $size;
+  background-color: #eee;
+  text-align: center;
+  cursor: pointer;
+}
