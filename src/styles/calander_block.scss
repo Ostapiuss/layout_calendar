@@ -9,11 +9,6 @@
 
   div {
     @include sizing(102px);
-    
-    &:first-child {
-      animation: MoveLeft 1.2s ease-in;
-      animation-fill-mode: forwards;
-    }
 
     &:hover {
       animation: MoveUp 1s;
@@ -32,9 +27,9 @@
       }
     }
   }
-  @each $name, $index in $weeklist {
-    &-#{$name}>div:first-child {
-      margin-left: $index *104px;
-    }
-  }
+  // @each $name, $index in $weeklist {
+  //   &-#{$name}>div:first-child {
+  //     margin-left: $index *104px;
+  //   }
+  // }
 }
