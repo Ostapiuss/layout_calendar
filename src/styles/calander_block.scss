@@ -9,10 +9,23 @@
 
   div {
     @include sizing(102px);
-
-    &:hover {
-      animation: MoveUp 1s;
+    
+    &:first-child {
+      animation: MoveLeft 1s ease-in;
       animation-fill-mode: forwards;
+    }
+
+    & {
+      position: relative;
+      transition-duration: 1s;
+      bottom: 0;
+    }
+    
+    &:hover {
+      display: inline-block;
+      position: relative;
+      background-color: #f5c2cb;
+      bottom: 20px;
     }
 
     @for $i from 1 through 31 {
@@ -27,9 +40,9 @@
       }
     }
   }
-  // @each $name, $index in $weeklist {
-  //   &-#{$name}>div:first-child {
-  //     margin-left: $index *104px;
-  //   }
-  // }
+  @each $name, $index in $weeklist {
+    &-#{$name}>div:first-child {
+      margin-left: $index *104px;
+    }
+  }
 }
