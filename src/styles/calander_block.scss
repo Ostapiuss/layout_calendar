@@ -8,6 +8,7 @@
   flex-wrap: wrap;
 
   div {
+    @extend %placeholer-for-calendar;
     @include sizing(102px);
     position: relative;
     transition-duration: 1s;
@@ -23,12 +24,6 @@
       position: relative;
       background-color: #f5c2cb;
       bottom: 20px;
-    }
-
-    @for $i from 1 through 31 {
-      &:nth-child(#{$i}) {
-        @extend %placeholer-for-calendar;
-      }
     }
 
     @for $i from 1 through 31 {
